@@ -9,21 +9,21 @@ python3
 ### Installation
 
 ```
-Clone this repo.
+-- Clone this repo.
 
-Create a new virtual environment for this application and activate it. 
+-- Create a new virtual environment for this application and activate it. 
 
-After activating the virtual environment, point to the root folder of this project and run:
+-- After activating the virtual environment, point to the root folder of this project and run:
 
-pip install -r requirements.txt
+-- pip install -r requirements.txt
 
-Create a postgreSQL database named orderDB with postgre as owner.
+-- Create a postgreSQL database named orderDB with postgre as owner.
 
-Restore the database using the orderDB file inside the postgreDB folder
+-- Restore the database using the orderDB file inside the postgreDB folder
 
-Change the password for the owner in settings.py to match your database owner's credentials.
+-- Change the password for the owner in settings.py to match your database owner's credentials.
 
-Run: python manage.py runserver 
+-- Run: python manage.py runserver 
  ```
  
 ### Admin credentials
