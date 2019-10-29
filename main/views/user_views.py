@@ -35,13 +35,13 @@ def signup(request):
         return JsonResponse("Method " + request.method + " not allowed", safe=False)
 
 
-class UserCRUDView(View):
+class UserCRUDView(View):  # pylint: disable=too-few-public-methods
     @method_decorator(csrf_exempt)  # Disables Django's CSRF validation.
     def dispatch(self, request, *args, **kwargs):
         return super(UserCRUDView, self).dispatch(request, *args, **kwargs)
 
     @staticmethod
-    def post(request, *args, **kwargs):
+    def post(request, *args, **kwargs):  # pylint: disable=unused-argument
         return JsonResponse("Method " + request.method + " not allowed", safe=False)
 
     @staticmethod
@@ -123,7 +123,7 @@ class UserCRUDView(View):
             return JsonResponse("User id not provided", safe=False)
 
     @staticmethod
-    def delete(request, user_id):
+    def delete(request, user_id):  # pylint: disable=unused-argument,invalid-name,redefined-builtin
         if user_id is not None:
             try:
                 user = User.objects.get(pk=user_id)

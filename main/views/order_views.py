@@ -27,13 +27,13 @@ def get_order_picture(request, order_id):
         return JsonResponse("Method " + request.method + " not allowed", safe=False)
 
 
-class OrderCRUDView(View):
+class OrderCRUDView(View):  # pylint: disable=too-few-public-methods
     @method_decorator(csrf_exempt)  # Disables Django's CSRF validation.
     def dispatch(self, request, *args, **kwargs):
         return super(OrderCRUDView, self).dispatch(request, *args, **kwargs)
 
     @staticmethod
-    def get(request, order_id):
+    def get(request, order_id):  # pylint: disable=unused-argument,invalid-name,redefined-builtin
         if order_id is not None:
             try:
                 order = Order.objects.get(pk=order_id)
@@ -55,7 +55,7 @@ class OrderCRUDView(View):
             return JsonResponse({'all orders': data})
 
     @staticmethod
-    def post(request, *args, **kwargs):
+    def post(request, *args, **kwargs):  # pylint: disable=unused-argument
 
         #  Check whether the data is valid or not.
         form = OrderForm(request.POST)
@@ -133,7 +133,7 @@ class OrderCRUDView(View):
             return JsonResponse("Order id not provided", safe=False)
 
     @staticmethod
-    def delete(request, order_id):
+    def delete(request, order_id):  # pylint: disable=unused-argument,invalid-name,redefined-builtin
         if order_id is not None:
             try:
                 order = Order.objects.get(pk=order_id)
