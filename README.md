@@ -1,4 +1,4 @@
-# django interview test
+# Django interview test
 
 ### Prerequisites
 
